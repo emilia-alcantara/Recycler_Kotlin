@@ -22,14 +22,19 @@ class PokemonAdapter : RecyclerView.Adapter<PokemonAdapter.MyViewHolder>() {
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val pokemon: Pokemon = pokemonList[position]
-        holder.txtNombre.text = pokemon.nombre
-        holder.txtDetalle.text = pokemon.tipo
+        holder.bind(pokemon)
+
 
     }
 
-    class MyViewHolder(binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
-        val txtNombre: TextView = binding.txtNombre
-        val txtDetalle: TextView = binding.txtDetalle
+    class MyViewHolder(val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
+
+        fun bind(pokemon: Pokemon) {
+            binding.txtNombre.text = pokemon.nombre
+            binding.txtDetalle.text = pokemon.tipo
+        }
+
+
 
 
     }
