@@ -1,5 +1,4 @@
-package com.example.kotlinexamples
-
+package cl.individual.martes180723p1
 class Pokedex {
     companion object {
         fun getPokedex(): List<Pokemon> {

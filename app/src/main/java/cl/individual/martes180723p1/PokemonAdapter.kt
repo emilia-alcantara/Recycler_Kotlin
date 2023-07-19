@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import cl.individual.martes180723p1.databinding.ItemBinding
 
 class PokemonAdapter : RecyclerView.Adapter<PokemonAdapter.MyViewHolder>() {
-    val pokemonList = mutableListOf<Pokemon>()
+    var pokemonList = mutableListOf<Pokemon>()
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -25,6 +25,10 @@ class PokemonAdapter : RecyclerView.Adapter<PokemonAdapter.MyViewHolder>() {
         holder.bind(pokemon)
 
 
+    }
+
+    fun setData(pokedex: List<Pokemon>) {
+        this.pokemonList = pokedex.toMutableList()
     }
 
     class MyViewHolder(val binding: ItemBinding) : RecyclerView.ViewHolder(binding.root) {
